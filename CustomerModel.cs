@@ -12,9 +12,9 @@ namespace PropertiesExample
         public string Name { get; set; }
         //Creates a property of a List<AccountModel> type, which 
         //have to be created after the CustomerModel instance have been created.
-        public List<AccountModel> AccountList { get; set; }
+        //public List<AccountModel> AccountList { get; set; }
         //Creates the list as the CustomerModel instance is being created
-        public List<AccountModel> accountlist = new List<AccountModel>();
+        public List<AccountModel> AccountList = new List<AccountModel>();
 
     }
 }
