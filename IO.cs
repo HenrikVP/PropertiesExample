@@ -9,13 +9,24 @@ namespace PropertiesExample
 {
     class IO
     {
-        public const string PATH = @"c:\temp\";
+        //public const string PATH = @"c:\temp\"; //Environment.SpecialFolder.CommonAppData
+
+        //C:\Users\[user]\AppData\Roaming
+        public string PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        //C:\Users\[user]\AppData\Local
+        public string PATH1 = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        //C:\Users\[user]
+        public string PATH2 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
         public List<CustomerModel> ReadCSV()
         {
+            Console.WriteLine(PATH);
+            Console.WriteLine(PATH1);
+            Console.WriteLine(PATH2);
             using (StreamReader sr = new StreamReader(PATH + "customers.csv"))
             {
                 List<CustomerModel> customerList = new List<CustomerModel>();
-                while (sr.Peek() >= 0)
+                while (!sr.EndOfStream)
                 {
                     //Console.WriteLine(sr.ReadLine());
                     string[] sa = sr.ReadLine().Split(";");
