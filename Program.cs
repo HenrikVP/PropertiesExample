@@ -11,6 +11,7 @@ namespace PropertiesExample
         {
             Console.WriteLine("Hello World!");
             new Controller().Start();
+            Console.ReadKey();
         }
 
 

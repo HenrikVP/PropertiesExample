@@ -23,7 +23,7 @@ namespace PropertiesExample
             Console.WriteLine(PATH);
             Console.WriteLine(PATH1);
             Console.WriteLine(PATH2);
-            using (StreamReader sr = new StreamReader(PATH + "customers.csv"))
+            using (StreamReader sr = new StreamReader(PATH + @"\customers.csv"))
             {
                 List<CustomerModel> customerList = new List<CustomerModel>();
                 while (!sr.EndOfStream)
@@ -46,7 +46,7 @@ namespace PropertiesExample
                 Directory.CreateDirectory(PATH);
             }
             //string path = txtFilePath.Text;
-            using (StreamWriter sw = File.AppendText($@"{PATH}customers.csv"))
+            using (StreamWriter sw = File.AppendText($@"{PATH}\customers.csv"))
             {
                 foreach (var c in customerList)
                 {
